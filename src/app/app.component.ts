@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'academia-routing';
+
+  active = 1;
+
+  setActive(number: number) {
+    this.active = number
+  }
 }
