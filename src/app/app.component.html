@@ -5,16 +5,16 @@
 <main class="p-5">
   <ul class="nav nav-pills justify-content-center">
     <li class="nav-item">
-      <a (click)="setActive(1)" class="nav-link" [class.active]="active === 1">dashboard</a>
+      <a class="nav-link" routerLink="dashboard" routerLinkActive="active">dashboard</a>
     </li>
     <li class="nav-item">
-      <a (click)="setActive(2)" class="nav-link" [class.active]="active === 2">users</a>
+      <a class="nav-link" routerLink="users" routerLinkActive="active">users</a>
     </li>
     <li class="nav-item">
-      <a (click)="setActive(3)" class="nav-link" [class.active]="active === 3">items</a>
+      <a  class="nav-link" routerLink="items" routerLinkActive="active">items</a>
     </li>
     <li class="nav-item">
-      <a (click)="setActive(4)" class="nav-link" [class.active]="active === 4">login</a>
+      <a  class="nav-link" routerLink="login" routerLinkActive="active">login</a>
     </li>
   </ul>
 
