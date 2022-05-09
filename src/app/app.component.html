@@ -5,18 +5,24 @@
 <main class="p-5">
   <ul class="nav nav-pills justify-content-center">
     <li class="nav-item">
-      <a class="nav-link" routerLink="dashboard" routerLinkActive="active">dashboard</a>
+      <a class="nav-link"  routerLink="dashboard" routerLinkActive="active">dashboard</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" routerLink="users" routerLinkActive="active">users</a>
+      <a class="nav-link"  routerLink="users" routerLinkActive="active">users</a>
     </li>
     <li class="nav-item">
-      <a  class="nav-link" routerLink="items" routerLinkActive="active">items</a>
+      <a  class="nav-link"  routerLink="items" routerLinkActive="active">items</a>
     </li>
     <li class="nav-item">
-      <a  class="nav-link" routerLink="login" routerLinkActive="active">login</a>
+      <a  class="nav-link"  routerLink="login" routerLinkActive="active">login</a>
     </li>
   </ul>
+
+  <div class="btn-group flex-column1" role="group" aria-label="Basic example">
+    <button type="button" class="btn btn-primary m-4" (click)="navigate('dashboard')">dashboard</button>
+    <button type="button" class="btn btn-primary m-4" (click)="navigate('users')">users</button>
+    <button type="button" class="btn btn-primary m-4" (click)="navigate('items')">items</button>
+  </div>
 
   <div class="p-3 d-flex justify-content-center ">
     <router-outlet></router-outlet>

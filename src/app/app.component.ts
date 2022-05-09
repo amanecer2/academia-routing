@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,9 +9,10 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'academia-routing';
 
-  active = 1;
+  constructor(private router: Router) { }
 
-  setActive(number: number) {
-    this.active = number
+  navigate(navigateTo: string) {
+    this.router.navigateByUrl(navigateTo) // simple navigation from `localhost/`
+    this.router.navigate([navigateTo]) // can have more control
   }
 }
