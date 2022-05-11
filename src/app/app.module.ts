@@ -7,6 +7,7 @@ import { UsersComponent } from './users/users.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemsComponent } from './items/items.component';
 import {HomeComponent} from "./home/home.component";
+import { ItemComponent } from './item/item.component';
 
 export const routes: Routes = [
   {
@@ -23,8 +24,20 @@ export const routes: Routes = [
   },
   {
     path: 'items',
-    component: ItemsComponent
-  }
+    component: ItemsComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '1',
+        pathMatch: 'full'
+      },
+      {
+        path: ':id',
+        component: ItemComponent
+      }
+    ]
+  },
+
 ]
 
 @NgModule({
@@ -33,6 +46,7 @@ export const routes: Routes = [
     UsersComponent,
     DashboardComponent,
     ItemsComponent,
+    ItemComponent,
   ],
   imports: [
     BrowserModule,
