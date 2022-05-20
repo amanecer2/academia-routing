@@ -8,6 +8,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ItemsComponent } from './items/items.component';
 import {HomeComponent} from "./home/home.component";
 import { ItemComponent } from './item/item.component';
+import { AdminComponent } from './admin/admin.component';
+import {AuthGuard} from "./auth.guard";
 
 export const routes: Routes = [
   {
@@ -21,6 +23,11 @@ export const routes: Routes = [
   {
     path: 'dashboard',//localhost/dashboard
     component: DashboardComponent
+  },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'items',
@@ -47,6 +54,7 @@ export const routes: Routes = [
     DashboardComponent,
     ItemsComponent,
     ItemComponent,
+    AdminComponent,
   ],
   imports: [
     BrowserModule,
