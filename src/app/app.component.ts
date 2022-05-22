@@ -1,16 +1,23 @@
 import { Component } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'academia-routing';
+  title = 'academia';
+  active = 0;
 
-  active = 1;
+  constructor(private router: Router) {
+  }
+  setActive(index = 0) {
+    this.active = index;
+  }
 
-  setActive(number: number) {
-    this.active = number
+  navigateTo(to = 'dashboard') {
+    //this.router.navigateByUrl('dashboard')
+    this.router.navigate(['dashboard'])
   }
 }

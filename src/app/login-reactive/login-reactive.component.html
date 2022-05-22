@@ -1,0 +1,30 @@
+<form [formGroup]="myForm">
+  <div class="form-group my-2">
+    <label for="exampleInputName">Name</label>
+    <input type="text" class="form-control" id="exampleInputName"
+           formControlName="name"
+           placeholder="Enter your name" >
+  </div>
+
+  <div class="form-group my-2">
+    <label for="exampleInputPassword">Password</label>
+    <input
+      formControlName="password"
+      type="text"  class="form-control" id="exampleInputPassword"  placeholder="Enter your name" >
+  </div>
+
+  <div formArrayName="toppings">
+    <button (click)="addTopping()">add topping</button>
+    <div class="form-group my-2" *ngFor="let topp of getToppings(); let i = index"    >
+      <input
+        [formControlName]="i"
+        type="text"  class="form-control"  placeholder="Enter your name" >
+    </div>
+
+  </div>
+
+</form>
+<div>form value: {{myForm.value | json}}</div>
+<div>form value: {{myForm.get('name')?.errors | json}}</div>
+<div>form value: {{myForm?.errors | json}}</div>
+<div>user value: {{user | json}}</div>

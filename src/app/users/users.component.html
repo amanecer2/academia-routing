@@ -1,0 +1,37 @@
+<p>users works!</p>
+<div>
+  <h1>users</h1>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr (click)="navigateTo('shahar')">
+      <th scope="row">1</th>
+      <td>shahar</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr (click)="navigateTo('yonathan')">
+      <th scope="row">2</th>
+      <td>yonathan</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr  routerLink="eliran">
+      <th scope="row">eliran</th>
+      <td colspan="2">eliran</td>
+      <td>@twitter</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div>
+  <router-outlet></router-outlet>
+</div>

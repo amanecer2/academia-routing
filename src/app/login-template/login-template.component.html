@@ -1,0 +1,42 @@
+<p>login-template works!</p>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+  <div class="form-group my-2">
+    <label for="exampleInputName">Name</label>
+    <input type="email" name="name"  [ngModel]="user.name"  class="form-control" id="exampleInputName"  placeholder="Enter your name" >
+    <small
+      *ngIf="myForm.controls['name']?.dirty && myForm.controls['name']?.value !== 'shahar'"
+      class="danger">must have password</small>
+  </div>
+  <div class="form-group my-2">
+    <label for="exampleInputPassword">Password</label>
+    <input type="text" name="password"
+           required
+           [(ngModel)]="user.password"  class="form-control" id="exampleInputPassword"  placeholder="Enter your Password" >
+  <small
+    *ngIf="myForm.controls['password']?.invalid"
+    class="danger">must have password</small>
+  </div>
+
+
+  <div  ngModelGroup="pupies">
+    <div class="form-group my-2">
+      <label for="dog">dog</label>
+      <input type="text" name="dog" ngModel  class="form-control" id="dog"  placeholder="Enter your dog" >
+    </div>
+    <div class="form-group my-2">
+      <label for="dog2">dog2</label>
+      <input type="text" name="dog2" ngModel  class="form-control" id="dog2"  placeholder="Enter your dog2" >
+    </div>
+  </div>
+
+  <div>
+    <button type="submit" [disabled]="myForm.invalid" class="my-2 btn btn-primary">Submit</button>
+    <button type="button" (click)="myForm.reset()">Reset</button>
+  </div>
+
+</form>
+
+
+<div>form value : {{myForm.value | json}}</div>
+<div>user value : {{user | json}}</div>
